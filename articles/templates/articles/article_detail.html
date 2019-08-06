@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+{% block content%}
+<div class="container w-100">
+	<div class="mt-5 article-detail	">
+		<div class="detail-title">
+				{{article.title}}
+		</div>
+		<div class="image-container">
+				<img src="{{article.image.url}}">	
+		</div>
+		<div class="mt-3 detail-author">
+				By : {{article.author}}
+		</div>
+		
+		<div class="detail-date">
+				{{article.date}}
+		</div>
+		<div class="detail-body">
+		{{article.body|linebreaks}}
+		</div>
+
+	</div>
+
+</div>
+{% endblock%}

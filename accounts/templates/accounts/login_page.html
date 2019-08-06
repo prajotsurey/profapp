@@ -1,0 +1,22 @@
+{% extends 'base_layout.html' %}
+{% block content %}	
+<div class="window">
+	<div class="container h-100">
+		<div class=" h-100 d-flex justify-content-center align-items-center ">
+				<div class="w-25 border border-primary p-3">
+				<form class="login-form" action="{% url 'accounts:login' %}" method="POST" >
+				{% csrf_token %}
+				{{form}}
+				{% if request.GET.next %}
+				<input type="hidden" name="next" value = "{{request.GET.next}}">
+				{% endif %}
+				<div>
+					<input class=" mt-1 btn-sm btn btn-primary " type="submit" value="Login">
+				</div>
+			</form>	
+			</div>
+			
+		</div>	
+	</div>
+</div>
+{% endblock %}

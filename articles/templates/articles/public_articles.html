@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+{% block content%}
+<div class="container w-100">
+	<div class="row d-flex justify-content-center mt-5	">
+			{% for article in articles %}
+				<div class="col-md-3 col-sm-6 p-4 border border-primary m-4 list-article">
+					<div class="thumbnail mb-2">
+						<a href= "{% url 'articles:detail' slug=article.slug %} ">
+							<img src="{{article.image.url}}"></a>	
+					</div>
+					<h1>{{article.title}}</h1>
+					<div class="info">
+					<p>{{article.snippet}}</p>	
+					</div>
+					<p class="author">Author : {{article.author}}</p>
+				</div>
+			{% endfor %}		
+	</div>	
+</div>
+{% endblock%}
