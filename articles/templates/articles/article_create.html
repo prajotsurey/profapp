@@ -1,12 +1,13 @@
 {% extends 'base_layout.html' %}
+{% load static from staticfiles%}
 {% block content %}
 <div class="window">
-	<div class="container h-100">
+	<div class="container h-95">
 		<div class=" h-100 d-flex justify-content-center align-items-center ">
 				<div class="col-md-3"></div>
 				<div class="border border-primary p-3">
 					
-					<form class="article-create" method="POST" action="{% url 'articles:create' %}">
+					<form class="article-create" method="POST" enctype="multipart/form-data" autocomplete="off" action="{% url 'articles:create' %}">
 						{% csrf_token %}
 						{{form}}
 						<div>
@@ -14,11 +15,11 @@
 						</div>
 						
 					</form>
-					
+				
 				</div>
 				<div class="col-md-3"></div>
 		</div>
 	</div>
 </div>
-
+<script type="text/javascript" src="{% static  'slugify.js' %}"></script>	
 {% endblock %}
