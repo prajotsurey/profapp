@@ -1,3 +1,10 @@
+.ac-header{
+	padding:5px;
+	padding-left: 20%;
+	font-size: 2.5rem;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: lighter;
+}
 .window{
 	height:90vh;
 }
@@ -46,9 +53,6 @@ ul{
 	padding:5px 5px 5px 15px;
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-weight: lighter;
-}
-.article-create{
-	width: 700px;
 }
 .article-create>input, .article-create>textarea{
 	width: 100%;
@@ -172,5 +176,15 @@ ul{
 	}
 	.author{
 		font-size: 0.6rem;
+	}
+}
+@media only screen and (max-width: 700px){
+	.article-create-container{
+		width: 90%;
+	}
+	.ac-header{
+		font-size: 2rem;
+		text-align: center;
+		padding: 5px;
 	}
 }
